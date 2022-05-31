@@ -14,7 +14,7 @@ protocol ContentListInteractorProtocol {
 struct ContentListInteractor: ContentListInteractorProtocol {
     
     let presenter: ContentListPresenterProtocol
-    let worker: ContentDataSourceWorkerProtocol
+    let worker: ContentWorkerProtocol
     
     func onAppear(_ request: ContentListModel.OnApear.Request) {
         getContentList()

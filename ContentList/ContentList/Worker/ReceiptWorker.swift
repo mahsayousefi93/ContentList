@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ReceiptDataSourceWorker: ContentDataSourceWorkerProtocol {
+struct ReceiptWorker: ContentWorkerProtocol {
     
     func fetchContent() async throws -> [ContentListEntity] {
         return []

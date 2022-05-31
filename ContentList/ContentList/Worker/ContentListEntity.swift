@@ -14,6 +14,10 @@ enum ContentListError: Error {
 }
 
 struct ContentListEntity {
-    
+    let title: String
+    let date: Date
+    let sender: String?
+    let type: String?
+    let imageURL: URL?
 }
 

@@ -13,9 +13,9 @@ struct ContentListConfigurator {
         
         let viewModel = ContentListModel.OnApear.ViewModel()
         
-        let receiptWorker = ReceiptDataSourceWorker()
-        let documentWorker = DocumentDataSourceWorker()
-        let facadeWorker = ContentDataSourceWorkerFacade(recipetWorler: receiptWorker, documentWorker: documentWorker)
+        let receiptWorker = ReceiptWorker()
+        let documentWorker = DocumentWorker()
+        let facadeWorker = ContentWorkerFacade(recipetWorler: receiptWorker, documentWorker: documentWorker)
         
         let presenter = ContentListPresenter(onAppearViewModel: viewModel)
         let interactor = ContentListInteractor(presenter: presenter, worker: facadeWorker)

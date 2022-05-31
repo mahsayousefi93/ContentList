@@ -1,5 +1,5 @@
 //
-//  ContentDataSourceWorker.swift
+//  ContentWorker.swift
 //  ContentList
 //
 //  Created by Mahsa Yousefi on 2022-05-30.
@@ -7,14 +7,14 @@
 
 import Foundation
 
-protocol ContentDataSourceWorkerProtocol {
+protocol ContentWorkerProtocol {
     func fetchContent() async throws -> [ContentListEntity]
 }
 
-struct ContentDataSourceWorkerFacade: ContentDataSourceWorkerProtocol {
+struct ContentWorkerFacade: ContentWorkerProtocol {
 
-    let recipetWorler: ContentDataSourceWorkerProtocol?
-    let documentWorker: ContentDataSourceWorkerProtocol?
+    let recipetWorler: ContentWorkerProtocol?
+    let documentWorker: ContentWorkerProtocol?
     
     func fetchContent() async throws -> [ContentListEntity] {
         let receipt = try await recipetWorler?.fetchContent()
