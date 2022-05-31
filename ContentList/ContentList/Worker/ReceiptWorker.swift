@@ -9,7 +9,18 @@ import Foundation
 
 struct ReceiptWorker: ContentWorkerProtocol {
     
+    let networkAPI: NetworkAPI
+    
     func fetchContent() async throws -> [ContentListEntity] {
-        return []
+        let receiptAPIModels = try await networkAPI.fetchReceipt()
+        return receiptAPIModels.map(mapReceipt)
+    }
+    
+    private func mapReceipt(_ receipt: ReceiptAPIModel) -> ContentListEntity {
+        return .init(title: receipt.storeName,
+                     date: receipt.purchaseDate,
+                     sender: nil,
+                     type: receipt.type.rawValue,
+                     imageURL: nil)
     }
 }

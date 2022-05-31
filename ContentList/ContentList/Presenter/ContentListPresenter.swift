@@ -22,7 +22,7 @@ struct ContentListPresenter: ContentListPresenterProtocol {
     }
     
     func presentList(_ response: ContentListModel.OnApear.Response.Success) {
-        onAppearViewModel.state = .loaded(["R1", "D1", "R2"])
+//        onAppearViewModel.state = .loaded(["R1", "D1", "R2"])
     }
     
     func presentFailure(_ response: ContentListModel.OnApear.Response.Failure) {

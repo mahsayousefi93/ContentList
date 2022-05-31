@@ -30,7 +30,7 @@ extension ContentListInteractor {
                 let contents = try await worker.fetchContent()
                 await MainActor.run { presenter.presentList(.init(data: contents)) }
             }
-            catch  {
+            catch let error {
                 await MainActor.run { presenter.presentFailure(.init(error: ContentListError.unknown)) }
             }
         }

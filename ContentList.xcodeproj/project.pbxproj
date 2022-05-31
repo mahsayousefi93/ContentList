@@ -20,6 +20,12 @@
 		885EBD7628468C6600FE5AA2 /* ContentListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EBD7528468C6600FE5AA2 /* ContentListConfigurator.swift */; };
 		885EBD79284691D800FE5AA2 /* ReceiptWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EBD78284691D800FE5AA2 /* ReceiptWorker.swift */; };
 		885EBD7B284691F900FE5AA2 /* DocumentWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EBD7A284691F900FE5AA2 /* DocumentWorker.swift */; };
+		885EBD7D2846A1A300FE5AA2 /* ContentRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EBD7C2846A1A300FE5AA2 /* ContentRow.swift */; };
+		885EBD812846A6F000FE5AA2 /* Receipts.json in Resources */ = {isa = PBXBuildFile; fileRef = 885EBD7F2846A6F000FE5AA2 /* Receipts.json */; };
+		885EBD822846A6F000FE5AA2 /* Documents.json in Resources */ = {isa = PBXBuildFile; fileRef = 885EBD802846A6F000FE5AA2 /* Documents.json */; };
+		885EBD862846A73D00FE5AA2 /* ReceiptAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EBD852846A73D00FE5AA2 /* ReceiptAPIModel.swift */; };
+		885EBD882846A74900FE5AA2 /* DocumentAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EBD872846A74900FE5AA2 /* DocumentAPIModel.swift */; };
+		885EBD8A2846B42700FE5AA2 /* NetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EBD892846B42700FE5AA2 /* NetworkAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +43,12 @@
 		885EBD7528468C6600FE5AA2 /* ContentListConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentListConfigurator.swift; sourceTree = "<group>"; };
 		885EBD78284691D800FE5AA2 /* ReceiptWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptWorker.swift; sourceTree = "<group>"; };
 		885EBD7A284691F900FE5AA2 /* DocumentWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentWorker.swift; sourceTree = "<group>"; };
+		885EBD7C2846A1A300FE5AA2 /* ContentRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentRow.swift; sourceTree = "<group>"; };
+		885EBD7F2846A6F000FE5AA2 /* Receipts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Receipts.json; sourceTree = "<group>"; };
+		885EBD802846A6F000FE5AA2 /* Documents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Documents.json; sourceTree = "<group>"; };
+		885EBD852846A73D00FE5AA2 /* ReceiptAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptAPIModel.swift; sourceTree = "<group>"; };
+		885EBD872846A74900FE5AA2 /* DocumentAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentAPIModel.swift; sourceTree = "<group>"; };
+		885EBD892846B42700FE5AA2 /* NetworkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +81,7 @@
 		885EBD5528455BA100FE5AA2 /* ContentList */ = {
 			isa = PBXGroup;
 			children = (
+				885EBD832846A71600FE5AA2 /* API */,
 				885EBD7328468AEB00FE5AA2 /* LoadableContent.swift */,
 				885EBD6428455BE200FE5AA2 /* ContentList */,
 				885EBD5628455BA100FE5AA2 /* ContentListApp.swift */,
@@ -119,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				885EBD5828455BA100FE5AA2 /* ContentList.swift */,
+				885EBD7C2846A1A300FE5AA2 /* ContentRow.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -132,6 +146,34 @@
 				885EBD7A284691F900FE5AA2 /* DocumentWorker.swift */,
 			);
 			path = Worker;
+			sourceTree = "<group>";
+		};
+		885EBD7E2846A6BB00FE5AA2 /* Jsons */ = {
+			isa = PBXGroup;
+			children = (
+				885EBD802846A6F000FE5AA2 /* Documents.json */,
+				885EBD7F2846A6F000FE5AA2 /* Receipts.json */,
+			);
+			path = Jsons;
+			sourceTree = "<group>";
+		};
+		885EBD832846A71600FE5AA2 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				885EBD7E2846A6BB00FE5AA2 /* Jsons */,
+				885EBD842846A72100FE5AA2 /* Models */,
+				885EBD892846B42700FE5AA2 /* NetworkAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		885EBD842846A72100FE5AA2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				885EBD852846A73D00FE5AA2 /* ReceiptAPIModel.swift */,
+				885EBD872846A74900FE5AA2 /* DocumentAPIModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +234,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				885EBD822846A6F000FE5AA2 /* Documents.json in Resources */,
+				885EBD812846A6F000FE5AA2 /* Receipts.json in Resources */,
 				885EBD5E28455BA300FE5AA2 /* Preview Assets.xcassets in Resources */,
 				885EBD5B28455BA300FE5AA2 /* Assets.xcassets in Resources */,
 			);
@@ -205,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				885EBD7028455E3600FE5AA2 /* ContentWorker.swift in Sources */,
+				885EBD862846A73D00FE5AA2 /* ReceiptAPIModel.swift in Sources */,
 				885EBD6828455C0F00FE5AA2 /* ContentListPresenter.swift in Sources */,
 				885EBD79284691D800FE5AA2 /* ReceiptWorker.swift in Sources */,
 				885EBD7228455E5A00FE5AA2 /* ContentListEntity.swift in Sources */,
@@ -214,7 +259,10 @@
 				885EBD5928455BA100FE5AA2 /* ContentList.swift in Sources */,
 				885EBD5728455BA100FE5AA2 /* ContentListApp.swift in Sources */,
 				885EBD6628455C0300FE5AA2 /* ContentListInteractor.swift in Sources */,
+				885EBD8A2846B42700FE5AA2 /* NetworkAPI.swift in Sources */,
+				885EBD7D2846A1A300FE5AA2 /* ContentRow.swift in Sources */,
 				885EBD7428468AEB00FE5AA2 /* LoadableContent.swift in Sources */,
+				885EBD882846A74900FE5AA2 /* DocumentAPIModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,6 +13,8 @@ struct ContentList: View {
     @ObservedObject var viewModel: ContentListModel.OnApear.ViewModel
     
     var body: some View {
-        Text("")
+        Text("").onAppear {
+            interactor.onAppear(.init())
+        }
     }
 }
