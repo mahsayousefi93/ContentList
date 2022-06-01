@@ -7,18 +7,26 @@
 
 import SwiftUI
 
+class ContentRowViewModel: ObservableObject {
+    @Published var title: String
+    @Published var date: String
+    @Published var logo: String
+    
+    @Published var upperHeading: String?
+    @Published var subtitle: String?
+    
+    init(title: String, date: String, logo: String, upperHeading: String?, subtitle: String?) {
+        self.title = title
+        self.date = date
+        self.logo = logo
+        self.upperHeading = upperHeading
+        self.subtitle = subtitle
+    }
+}
+
 struct ContentRow: View {
     
-    class ViewModel: ObservableObject {
-        @Published var title: String = ""
-        @Published var date: String = ""
-        @Published var logo: String = ""
-        
-        @Published var upperHeading: String? = nil
-        @Published var subtitle: String? = nil
-    }
-    
-    @ObservedObject var viewModel: ViewModel
+    @ObservedObject var viewModel: ContentRowViewModel
     
     var body: some View {
         HStack(alignment: .center, spacing: 16) {

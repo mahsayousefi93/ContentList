@@ -13,11 +13,10 @@ enum ContentListError: Error {
     case unknown
 }
 
-struct ContentListEntity {
-    let title: String
-    let date: Date?
-    let sender: String?
-    let type: String?
-    let imageURL: URL?
+protocol ContentListEntity {
+    var title: String { get }
+    var date: Date { get }
+    var itemSender: String? { get }
+    var itemType: String? { get }
 }
 

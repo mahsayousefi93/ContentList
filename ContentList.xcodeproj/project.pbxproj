@@ -26,6 +26,9 @@
 		885EBD862846A73D00FE5AA2 /* ReceiptAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EBD852846A73D00FE5AA2 /* ReceiptAPIModel.swift */; };
 		885EBD882846A74900FE5AA2 /* DocumentAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EBD872846A74900FE5AA2 /* DocumentAPIModel.swift */; };
 		885EBD8A2846B42700FE5AA2 /* NetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EBD892846B42700FE5AA2 /* NetworkAPI.swift */; };
+		885EBD8D28474BDA00FE5AA2 /* ReceiptAPIModel+Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EBD8C28474BDA00FE5AA2 /* ReceiptAPIModel+Entity.swift */; };
+		885EBD8F28474C4600FE5AA2 /* DocumentAPIModel+Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EBD8E28474C4600FE5AA2 /* DocumentAPIModel+Entity.swift */; };
+		885EBD922847544200FE5AA2 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EBD912847544200FE5AA2 /* Date+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +52,9 @@
 		885EBD852846A73D00FE5AA2 /* ReceiptAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptAPIModel.swift; sourceTree = "<group>"; };
 		885EBD872846A74900FE5AA2 /* DocumentAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentAPIModel.swift; sourceTree = "<group>"; };
 		885EBD892846B42700FE5AA2 /* NetworkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPI.swift; sourceTree = "<group>"; };
+		885EBD8C28474BDA00FE5AA2 /* ReceiptAPIModel+Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReceiptAPIModel+Entity.swift"; sourceTree = "<group>"; };
+		885EBD8E28474C4600FE5AA2 /* DocumentAPIModel+Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DocumentAPIModel+Entity.swift"; sourceTree = "<group>"; };
+		885EBD912847544200FE5AA2 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +87,7 @@
 		885EBD5528455BA100FE5AA2 /* ContentList */ = {
 			isa = PBXGroup;
 			children = (
+				885EBD902847543400FE5AA2 /* Extensions */,
 				885EBD832846A71600FE5AA2 /* API */,
 				885EBD7328468AEB00FE5AA2 /* LoadableContent.swift */,
 				885EBD6428455BE200FE5AA2 /* ContentList */,
@@ -140,7 +147,7 @@
 		885EBD6C28455CC800FE5AA2 /* Worker */ = {
 			isa = PBXGroup;
 			children = (
-				885EBD7128455E5A00FE5AA2 /* ContentListEntity.swift */,
+				885EBD8B28474BBB00FE5AA2 /* DominModels */,
 				885EBD6F28455E3600FE5AA2 /* ContentWorker.swift */,
 				885EBD78284691D800FE5AA2 /* ReceiptWorker.swift */,
 				885EBD7A284691F900FE5AA2 /* DocumentWorker.swift */,
@@ -174,6 +181,24 @@
 				885EBD872846A74900FE5AA2 /* DocumentAPIModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		885EBD8B28474BBB00FE5AA2 /* DominModels */ = {
+			isa = PBXGroup;
+			children = (
+				885EBD7128455E5A00FE5AA2 /* ContentListEntity.swift */,
+				885EBD8C28474BDA00FE5AA2 /* ReceiptAPIModel+Entity.swift */,
+				885EBD8E28474C4600FE5AA2 /* DocumentAPIModel+Entity.swift */,
+			);
+			path = DominModels;
+			sourceTree = "<group>";
+		};
+		885EBD902847543400FE5AA2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				885EBD912847544200FE5AA2 /* Date+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,6 +279,8 @@
 				885EBD79284691D800FE5AA2 /* ReceiptWorker.swift in Sources */,
 				885EBD7228455E5A00FE5AA2 /* ContentListEntity.swift in Sources */,
 				885EBD7B284691F900FE5AA2 /* DocumentWorker.swift in Sources */,
+				885EBD8D28474BDA00FE5AA2 /* ReceiptAPIModel+Entity.swift in Sources */,
+				885EBD8F28474C4600FE5AA2 /* DocumentAPIModel+Entity.swift in Sources */,
 				885EBD6E28455D2500FE5AA2 /* ContentListModel.swift in Sources */,
 				885EBD7628468C6600FE5AA2 /* ContentListConfigurator.swift in Sources */,
 				885EBD5928455BA100FE5AA2 /* ContentList.swift in Sources */,
@@ -263,6 +290,7 @@
 				885EBD7D2846A1A300FE5AA2 /* ContentRow.swift in Sources */,
 				885EBD7428468AEB00FE5AA2 /* LoadableContent.swift in Sources */,
 				885EBD882846A74900FE5AA2 /* DocumentAPIModel.swift in Sources */,
+				885EBD922847544200FE5AA2 /* Date+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

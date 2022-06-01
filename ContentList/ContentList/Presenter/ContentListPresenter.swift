@@ -22,10 +22,22 @@ struct ContentListPresenter: ContentListPresenterProtocol {
     }
     
     func presentList(_ response: ContentListModel.OnApear.Response.Success) {
-//        onAppearViewModel.state = .loaded(["R1", "D1", "R2"])
+        onAppearViewModel.state = .loaded(response.data.map(createRowViewModel))
     }
     
     func presentFailure(_ response: ContentListModel.OnApear.Response.Failure) {
         onAppearViewModel.state = .error("Error occurred")
+    }
+}
+
+extension ContentListPresenter {
+    
+    private func createRowViewModel(_ model: ContentListEntity) -> ContentRowViewModel {
+        ContentRowViewModel.init(title: model.title,
+                                 date: model.date.format(),
+                                 logo: "",
+                                 upperHeading: model.itemType,
+                                 subtitle: model.itemSender)
+        
     }
 }
