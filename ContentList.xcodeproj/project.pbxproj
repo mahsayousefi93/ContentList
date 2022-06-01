@@ -14,7 +14,7 @@
 		885EBD6628455C0300FE5AA2 /* ContentListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EBD6528455C0300FE5AA2 /* ContentListInteractor.swift */; };
 		885EBD6828455C0F00FE5AA2 /* ContentListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EBD6728455C0F00FE5AA2 /* ContentListPresenter.swift */; };
 		885EBD6E28455D2500FE5AA2 /* ContentListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EBD6D28455D2500FE5AA2 /* ContentListModel.swift */; };
-		885EBD7028455E3600FE5AA2 /* ContentWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EBD6F28455E3600FE5AA2 /* ContentWorker.swift */; };
+		885EBD7028455E3600FE5AA2 /* ContentWorkerFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EBD6F28455E3600FE5AA2 /* ContentWorkerFacade.swift */; };
 		885EBD7228455E5A00FE5AA2 /* ContentListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EBD7128455E5A00FE5AA2 /* ContentListEntity.swift */; };
 		885EBD7428468AEB00FE5AA2 /* LoadableContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EBD7328468AEB00FE5AA2 /* LoadableContent.swift */; };
 		885EBD7628468C6600FE5AA2 /* ContentListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EBD7528468C6600FE5AA2 /* ContentListConfigurator.swift */; };
@@ -31,6 +31,7 @@
 		885EBD922847544200FE5AA2 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EBD912847544200FE5AA2 /* Date+Extension.swift */; };
 		885EBD9528476FD200FE5AA2 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EBD9428476FD200FE5AA2 /* Label.swift */; };
 		885EBD972847740000FE5AA2 /* String+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EBD962847740000FE5AA2 /* String+Extention.swift */; };
+		885EBD9928477A6400FE5AA2 /* ContentWorkerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EBD9828477A6400FE5AA2 /* ContentWorkerProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,7 +43,7 @@
 		885EBD6528455C0300FE5AA2 /* ContentListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentListInteractor.swift; sourceTree = "<group>"; };
 		885EBD6728455C0F00FE5AA2 /* ContentListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentListPresenter.swift; sourceTree = "<group>"; };
 		885EBD6D28455D2500FE5AA2 /* ContentListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentListModel.swift; sourceTree = "<group>"; };
-		885EBD6F28455E3600FE5AA2 /* ContentWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentWorker.swift; sourceTree = "<group>"; };
+		885EBD6F28455E3600FE5AA2 /* ContentWorkerFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentWorkerFacade.swift; sourceTree = "<group>"; };
 		885EBD7128455E5A00FE5AA2 /* ContentListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentListEntity.swift; sourceTree = "<group>"; };
 		885EBD7328468AEB00FE5AA2 /* LoadableContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableContent.swift; sourceTree = "<group>"; };
 		885EBD7528468C6600FE5AA2 /* ContentListConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentListConfigurator.swift; sourceTree = "<group>"; };
@@ -59,6 +60,7 @@
 		885EBD912847544200FE5AA2 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		885EBD9428476FD200FE5AA2 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		885EBD962847740000FE5AA2 /* String+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extention.swift"; sourceTree = "<group>"; };
+		885EBD9828477A6400FE5AA2 /* ContentWorkerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentWorkerProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,9 +155,10 @@
 			isa = PBXGroup;
 			children = (
 				885EBD8B28474BBB00FE5AA2 /* DominModels */,
-				885EBD6F28455E3600FE5AA2 /* ContentWorker.swift */,
+				885EBD6F28455E3600FE5AA2 /* ContentWorkerFacade.swift */,
 				885EBD78284691D800FE5AA2 /* ReceiptWorker.swift */,
 				885EBD7A284691F900FE5AA2 /* DocumentWorker.swift */,
+				885EBD9828477A6400FE5AA2 /* ContentWorkerProtocol.swift */,
 			);
 			path = Worker;
 			sourceTree = "<group>";
@@ -287,7 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				885EBD7028455E3600FE5AA2 /* ContentWorker.swift in Sources */,
+				885EBD7028455E3600FE5AA2 /* ContentWorkerFacade.swift in Sources */,
 				885EBD862846A73D00FE5AA2 /* ReceiptAPIModel.swift in Sources */,
 				885EBD6828455C0F00FE5AA2 /* ContentListPresenter.swift in Sources */,
 				885EBD79284691D800FE5AA2 /* ReceiptWorker.swift in Sources */,
@@ -297,6 +300,7 @@
 				885EBD8F28474C4600FE5AA2 /* DocumentAPIModel+Entity.swift in Sources */,
 				885EBD6E28455D2500FE5AA2 /* ContentListModel.swift in Sources */,
 				885EBD9528476FD200FE5AA2 /* Label.swift in Sources */,
+				885EBD9928477A6400FE5AA2 /* ContentWorkerProtocol.swift in Sources */,
 				885EBD7628468C6600FE5AA2 /* ContentListConfigurator.swift in Sources */,
 				885EBD5928455BA100FE5AA2 /* ContentList.swift in Sources */,
 				885EBD5728455BA100FE5AA2 /* ContentListApp.swift in Sources */,

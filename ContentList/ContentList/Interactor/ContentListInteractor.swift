@@ -28,11 +28,19 @@ extension ContentListInteractor {
         Task {
             do {
                 let contents = try await worker.fetchContent()
-                await MainActor.run { presenter.presentList(.init(data: contents)) }
+                await handleSuccessResponse(contents)
             }
-            catch let error {
+            catch {
                 await MainActor.run { presenter.presentFailure(.init(error: ContentListError.unknown)) }
             }
         }
+    }
+    
+    @MainActor private func handleSuccessResponse(_ contents: [ContentListEntity]) {
+        guard !contents.isEmpty else {
+            presenter.presentFailure(.init(error: .emptyList))
+            return
+        }
+        presenter.presentList(.init(data: contents))
     }
 }

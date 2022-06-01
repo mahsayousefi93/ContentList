@@ -9,6 +9,8 @@ import Foundation
 
 struct ContentListConfigurator {
     
+    //Here you can configure variant of instance, e.g you can pass the receipt nil to the module if
+    //you do not need it
     func getView() -> ContentList {
         
         let networkAPI = NetworkAPI(jsonDecoder: getJSONDecoder())

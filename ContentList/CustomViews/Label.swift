@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+//This also can be implemented as ViewModifier
 struct LabelView: View {
     let text: String
     
@@ -14,9 +15,9 @@ struct LabelView: View {
         Text(text)
             .padding(.horizontal, 10)
             .padding(.vertical, 5)
-            .background(.yellow)
+            .background(.yellow.opacity(0.5))
             .cornerRadius(10)
-            .font(.system(.caption2).bold())
+            .font(.system(size: 10).bold())
             .foregroundColor(.primary)
     }
 }

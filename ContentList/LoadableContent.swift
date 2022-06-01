@@ -10,6 +10,6 @@ import Foundation
 enum LoadableContent<Model, ErrorViewModel> {
     case idle
     case loaded(Model)
-    case error(ErrorViewModel?)
+    case error(ErrorViewModel)
     case loading
 }

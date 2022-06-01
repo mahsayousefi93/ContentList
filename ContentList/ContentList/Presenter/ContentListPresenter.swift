@@ -25,8 +25,14 @@ struct ContentListPresenter: ContentListPresenterProtocol {
         onAppearViewModel.state = .loaded(createSectionViewModel(response.data))
     }
     
+    //String can be read from localized string
     func presentFailure(_ response: ContentListModel.OnApear.Response.Failure) {
-        onAppearViewModel.state = .error("Error occurred")
+        switch response.error {
+        case .emptyList:
+            onAppearViewModel.state = .error("No Conent")
+        case .unknown:
+            onAppearViewModel.state = .error("Unknown Error! Please try again later")
+        }
     }
 }
 
@@ -59,6 +65,7 @@ extension ContentListPresenter {
         }
     }
     
+    //some logo
     private func getLogo(_ type: ContentType) -> String {
         return type == .doc ? "doc.text.fill" : "doc.plaintext"
     }

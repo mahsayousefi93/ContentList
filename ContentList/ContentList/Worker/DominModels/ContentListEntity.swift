@@ -9,7 +9,6 @@ import Foundation
 
 enum ContentListError: Error {
     case emptyList
-    case noInternetConnection
     case unknown
 }
 

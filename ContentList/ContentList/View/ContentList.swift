@@ -24,26 +24,40 @@ struct ContentList: View {
     
     var body: some View {
         NavigationView {
-            switch viewModel.state {
-            case .idle:
-                Color.clear
-            case .loaded(let sections):
-                List {
-                    ForEach(sections) { section in
-                        Section(header: Text(section.title)) {
-                            ForEach(section.rows) { row in
-                                ContentRow(viewModel: row)
-                            }
-                        }
-                    }
-                }.listStyle(GroupedListStyle())
-            case .loading:
-                ProgressView()
-            case .error(let error):
-                Text(error ?? "Error")
+            
+            VStack {
+                switch viewModel.state {
+                    
+                case .idle:
+                    Color.clear
+                    
+                case .loaded(let sections):
+                    getList(sections)
+                    
+                case .loading:
+                    ProgressView()
+                    
+                case .error(let error):
+                    Text(error)
+                }
             }
-        }.onAppear {
+            .navigationBarTitleDisplayMode(.inline)
+        }
+        .onAppear {
             interactor.onAppear(.init())
         }
+    }
+    
+    
+    private func getList(_ sections: [ContentListSectionViewModel]) -> some View {
+        List {
+            ForEach(sections) { section in
+                Section(header: Text(section.title)) {
+                    ForEach(section.rows) { row in
+                        ContentRow(viewModel: row)
+                    }
+                }
+            }
+        }.listStyle(GroupedListStyle())
     }
 }

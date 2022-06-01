@@ -30,6 +30,7 @@ struct ContentRow: View {
     
     var body: some View {
         HStack(alignment: .center, spacing: 16) {
+            
             Image(systemName: viewModel.logo)
                 .font(.system(size: 40))
                 .foregroundColor(.green)
@@ -43,7 +44,7 @@ struct ContentRow: View {
                 Text(viewModel.title)
                     .font(.headline)
                 Text(viewModel.date)
-                    .font(.body)
+                    .font(.subheadline)
                 
                 if let subtitle = viewModel.subtitle {
                     Text(subtitle)
@@ -51,6 +52,7 @@ struct ContentRow: View {
                         .foregroundColor(.gray)
                 }
             }
+            .padding()
         }
     }
 }

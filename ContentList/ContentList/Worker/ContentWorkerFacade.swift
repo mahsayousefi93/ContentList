@@ -7,14 +7,12 @@
 
 import Foundation
 
-protocol ContentWorkerProtocol {
-    func fetchContent() async throws -> [ContentListEntity]
-}
-
 struct ContentWorkerFacade: ContentWorkerProtocol {
 
+    //One option can be create an array of [ContentWorkerProtocol] and then make it AsyncIteratable
     let recipetWorler: ContentWorkerProtocol?
     let documentWorker: ContentWorkerProtocol?
+    
     
     func fetchContent() async throws -> [ContentListEntity] {
         let receipt = try await recipetWorler?.fetchContent()
