@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class ContentRowViewModel: ObservableObject {
+class ContentRowViewModel: ObservableObject, Identifiable {
     @Published var title: String
     @Published var date: String
     @Published var logo: String
@@ -30,18 +30,27 @@ struct ContentRow: View {
     
     var body: some View {
         HStack(alignment: .center, spacing: 16) {
-            Image(systemName: "info")
+            Image(systemName: viewModel.logo)
+                .font(.system(size: 40))
+                .foregroundColor(.green)
             
-            VStack(alignment: .leading, spacing: 16) {
+            VStack(alignment: .leading, spacing: 8) {
+                
                 if let upperHeading = viewModel.upperHeading {
-                    Text(upperHeading)
+                    LabelView(text: upperHeading)
                 }
+                
                 Text(viewModel.title)
+                    .font(.headline)
                 Text(viewModel.date)
+                    .font(.body)
+                
                 if let subtitle = viewModel.subtitle {
                     Text(subtitle)
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
                 }
             }
-        }.padding()
+        }
     }
 }

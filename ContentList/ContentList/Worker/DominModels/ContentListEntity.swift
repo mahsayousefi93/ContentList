@@ -13,10 +13,15 @@ enum ContentListError: Error {
     case unknown
 }
 
+enum ContentType: Hashable {
+    case receipt(type: ReceiptType)
+    case doc
+}
+
 protocol ContentListEntity {
     var title: String { get }
     var date: Date { get }
     var itemSender: String? { get }
-    var itemType: String? { get }
+    var itemType: ContentType { get }
 }
 

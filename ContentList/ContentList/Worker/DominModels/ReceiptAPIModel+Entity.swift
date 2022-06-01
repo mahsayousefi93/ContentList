@@ -12,6 +12,6 @@ extension ReceiptAPIModel: ContentListEntity {
     var title: String { storeName }
     var date: Date { purchaseDate }
     var itemSender: String? { nil }
-    var itemType: String? { type.rawValue }
+    var itemType: ContentType { .receipt(type: type) }
     
 }

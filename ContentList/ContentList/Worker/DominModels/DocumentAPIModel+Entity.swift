@@ -11,6 +11,6 @@ extension DocumentAPIModel: ContentListEntity {
     
     var title: String { subject }
     var date: Date { generatedAt }
-    var itemSender: String? { sender }
-    var itemType: String? { nil }
+    var itemSender: String? { senderName }
+    var itemType: ContentType { .doc }
 }

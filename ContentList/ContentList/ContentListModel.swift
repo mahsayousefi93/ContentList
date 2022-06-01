@@ -24,7 +24,7 @@ enum ContentListModel {
         }
         
         class ViewModel: ObservableObject {
-            @Published var state: LoadableContent<[ContentRowViewModel], String> = .idle
+            @Published var state: LoadableContent<[ContentListSectionViewModel], String> = .idle
         }
     }
     

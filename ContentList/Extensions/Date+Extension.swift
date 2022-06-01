@@ -7,11 +7,16 @@
 
 import Foundation
 
+enum Formats: String {
+    case yyyyMMdd = "yyyy-MM-dd"
+    case MMMMyyyy = "MMMM yyyy"
+}
+
 extension Date {
     
-    func format(_ format: String = "yyyy-MM-dd") -> String {
+    func format(_ format: Formats = .yyyyMMdd) -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = format
+        dateFormatter.dateFormat = format.rawValue
         return dateFormatter.string(from: self)
     }
 }
